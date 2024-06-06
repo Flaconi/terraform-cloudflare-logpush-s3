@@ -150,7 +150,7 @@ Default: `1000`
 
 | Name | Description |
 |------|-------------|
-| <a name="output_logpush_job_id"></a> [logpush\_job\_id](#output\_logpush\_job\_id) | The id of the created jogpush job |
+| <a name="output_logpush_job_id"></a> [logpush\_job\_id](#output\_logpush\_job\_id) | The id of the created logpush job |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
