@@ -69,9 +69,9 @@ Description: Uniquely identifies a resource (such as an s3 bucket) where data wi
 
 Type: `string`
 
-### <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name)
+### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
 
-Description: s3 bucket where data will be pushed
+Description: Challenge to confirm ownership of the destination
 
 Type: `string`
 

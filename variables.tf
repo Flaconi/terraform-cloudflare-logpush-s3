@@ -54,8 +54,8 @@ variable "s3_bucket_conf" {
   type        = string
 }
 
-variable "s3_bucket_name" {
-  description = "s3 bucket where data will be pushed"
+variable "ownership_challenge" {
+  description = "Challenge to confirm ownership of the destination"
   type        = string
 }
 
