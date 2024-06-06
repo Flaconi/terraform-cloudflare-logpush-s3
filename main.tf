@@ -15,6 +15,6 @@ resource "cloudflare_logpush_job" "this" {
   max_upload_interval_seconds = var.max_upload_interval_seconds
   max_upload_records          = var.max_upload_records
   name                        = var.job_name
-  ownership_challenge         = data.aws_s3_bucket_object.challenge_file.body
+  ownership_challenge         = var.ownership_challenge
   zone_id                     = data.cloudflare_zone.this.id
 }
