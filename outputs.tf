@@ -1,4 +1,3 @@
-output "logpush_job_id" {
-  value       = cloudflare_logpush_job.this.id
-  description = "The id of the created logpush job"
+output "logpush_job" {
+  value = { for k, v in cloudflare_logpush_job.this : k => v if k != "ownership_challenge" }
 }
