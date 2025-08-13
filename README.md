@@ -45,21 +45,9 @@ Description: The Cloudflare API token.
 
 Type: `string`
 
-### <a name="input_job_name"></a> [job\_name](#input\_job\_name)
-
-Description: The name of the job to create
-
-Type: `string`
-
 ### <a name="input_domain"></a> [domain](#input\_domain)
 
 Description: Cloudflare domain to fetch the zone id
-
-Type: `string`
-
-### <a name="input_logpull_options"></a> [logpull\_options](#input\_logpull\_options)
-
-Description: Configuration string for requested fields and timestamp formats
 
 Type: `string`
 
@@ -72,6 +60,12 @@ Type: `string`
 ### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
 
 Description: Challenge to confirm ownership of the destination
+
+Type: `string`
+
+### <a name="input_name"></a> [name](#input\_name)
+
+Description: The name of the job to create
 
 Type: `string`
 
@@ -102,14 +96,6 @@ Description: Filter to include/exclude events
 Type: `map(any)`
 
 Default: `{}`
-
-### <a name="input_frequency"></a> [frequency](#input\_frequency)
-
-Description: Frequency of logs being pushed
-
-Type: `string`
-
-Default: `"high"`
 
 ### <a name="input_kind"></a> [kind](#input\_kind)
 
@@ -142,6 +128,32 @@ Description: The maximum number of log lines per batch.
 Type: `number`
 
 Default: `1000`
+
+### <a name="input_output_options"></a> [output\_options](#input\_output\_options)
+
+Description: Configuration string for requested fields and timestamp formats
+
+Type:
+
+```hcl
+object({
+    batch_prefix     = optional(string, "")
+    batch_suffix     = optional(string, "")
+    cve_2021_44228   = optional(bool, false)
+    field_delimiter  = optional(string, "")
+    field_names      = optional(list(string))
+    output_type      = optional(string, "ndjson")
+    record_delimiter = optional(string, "")
+    record_prefix    = optional(string, "")
+    record_suffix    = optional(string, "")
+    record_template  = optional(string, "")
+    # Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current sample_interval of the data
+    sample_rate      = optional(number, 1)
+    timestamp_format = optional(string, "rfc3339")
+  })
+```
+
+Default: `{}`
 
 <!-- TFDOCS_INPUTS_END -->
 

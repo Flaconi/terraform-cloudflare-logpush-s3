@@ -10,11 +10,11 @@ resource "cloudflare_logpush_job" "this" {
   destination_conf            = cloudflare_logpush_ownership_challenge.this.destination_conf
   filter                      = length(var.filter) > 0 ? jsonencode(var.filter) : null
   kind                        = var.kind
-  logpull_options             = var.logpull_options
   max_upload_bytes            = var.max_upload_bytes
   max_upload_interval_seconds = var.max_upload_interval_seconds
   max_upload_records          = var.max_upload_records
-  name                        = var.job_name
+  name                        = var.name
+  output_options              = var.output_options != null ? var.output_options : null
   ownership_challenge         = var.ownership_challenge
   zone_id                     = local.zone_id
 }
