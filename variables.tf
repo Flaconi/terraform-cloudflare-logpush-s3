@@ -15,6 +15,11 @@ variable "dataset" {
   default     = "http_requests"
 }
 
+variable "destination_conf" {
+  description = "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed"
+  type        = string
+}
+
 variable "enabled" {
   description = "Whether to enable the job"
   type        = bool
@@ -32,11 +37,6 @@ variable "kind" {
   description = "The kind of job to create"
   type        = string
   default     = null
-}
-
-variable "s3_bucket_conf" {
-  description = "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed"
-  type        = string
 }
 
 variable "max_upload_bytes" {

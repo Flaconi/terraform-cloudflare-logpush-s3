@@ -1,13 +1,13 @@
 resource "cloudflare_logpush_ownership_challenge" "this" {
   zone_id          = local.zone_id
-  destination_conf = var.s3_bucket_conf
+  destination_conf = var.destination_conf
 }
 
 resource "cloudflare_logpush_job" "this" {
   depends_on                  = [cloudflare_logpush_ownership_challenge.this]
   enabled                     = var.enabled
   dataset                     = var.dataset
-  destination_conf            = cloudflare_logpush_ownership_challenge.this.destination_conf
+  destination_conf            = var.destination_conf
   filter                      = var.filter != null ? jsonencode(var.filter) : null
   kind                        = var.kind
   max_upload_bytes            = var.max_upload_bytes

@@ -51,7 +51,7 @@ Description: Cloudflare domain to fetch the zone id
 
 Type: `string`
 
-### <a name="input_s3_bucket_conf"></a> [s3\_bucket\_conf](#input\_s3\_bucket\_conf)
+### <a name="input_destination_conf"></a> [destination\_conf](#input\_destination\_conf)
 
 Description: Uniquely identifies a resource (such as an s3 bucket) where data will be pushed
 
