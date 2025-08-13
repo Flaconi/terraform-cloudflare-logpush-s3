@@ -1,5 +1,5 @@
 resource "cloudflare_logpush_ownership_challenge" "ownership_challenge" {
-  zone_id          = data.cloudflare_zone.this.id
+  zone_id          = local.zone_id
   destination_conf = var.s3_bucket_conf
 }
 
@@ -16,5 +16,5 @@ resource "cloudflare_logpush_job" "this" {
   max_upload_records          = var.max_upload_records
   name                        = var.job_name
   ownership_challenge         = var.ownership_challenge
-  zone_id                     = data.cloudflare_zone.this.id
+  zone_id                     = local.zone_id
 }
