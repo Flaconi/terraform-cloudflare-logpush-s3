@@ -21,25 +21,21 @@ variable "enabled" {
   default     = true
 }
 
+# https://developers.cloudflare.com/logs/logpush/logpush-job/filters/
 variable "filter" {
   description = "Filter to include/exclude events"
   type        = map(any)
-  default     = {}
+  default     = null
 }
 
 variable "kind" {
   description = "The kind of job to create"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "s3_bucket_conf" {
   description = "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed"
-  type        = string
-}
-
-variable "ownership_challenge" {
-  description = "Challenge to confirm ownership of the destination"
   type        = string
 }
 
@@ -84,4 +80,10 @@ variable "output_options" {
     timestamp_format = optional(string, "rfc3339")
   })
   default = {}
+}
+
+variable "ownership_challenge" {
+  description = "Challenge to confirm ownership of the destination"
+  type        = string
+  default     = null
 }

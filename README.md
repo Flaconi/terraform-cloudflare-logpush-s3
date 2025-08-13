@@ -57,12 +57,6 @@ Description: Uniquely identifies a resource (such as an s3 bucket) where data wi
 
 Type: `string`
 
-### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
-
-Description: Challenge to confirm ownership of the destination
-
-Type: `string`
-
 ### <a name="input_name"></a> [name](#input\_name)
 
 Description: The name of the job to create
@@ -95,7 +89,7 @@ Description: Filter to include/exclude events
 
 Type: `map(any)`
 
-Default: `{}`
+Default: `null`
 
 ### <a name="input_kind"></a> [kind](#input\_kind)
 
@@ -103,7 +97,7 @@ Description: The kind of job to create
 
 Type: `string`
 
-Default: `""`
+Default: `null`
 
 ### <a name="input_max_upload_bytes"></a> [max\_upload\_bytes](#input\_max\_upload\_bytes)
 
@@ -154,6 +148,14 @@ object({
 ```
 
 Default: `{}`
+
+### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
+
+Description: Challenge to confirm ownership of the destination
+
+Type: `string`
+
+Default: `null`
 
 <!-- TFDOCS_INPUTS_END -->
 

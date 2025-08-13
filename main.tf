@@ -8,7 +8,7 @@ resource "cloudflare_logpush_job" "this" {
   enabled                     = var.enabled
   dataset                     = var.dataset
   destination_conf            = cloudflare_logpush_ownership_challenge.this.destination_conf
-  filter                      = length(var.filter) > 0 ? jsonencode(var.filter) : null
+  filter                      = var.filter != null ? jsonencode(var.filter) : null
   kind                        = var.kind
   max_upload_bytes            = var.max_upload_bytes
   max_upload_interval_seconds = var.max_upload_interval_seconds
