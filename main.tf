@@ -1,13 +1,12 @@
 resource "cloudflare_logpush_ownership_challenge" "this" {
   zone_id          = local.zone_id
-  destination_conf = var.destination_conf
+  destination_conf = local.destination_conf
 }
 
 resource "cloudflare_logpush_job" "this" {
-  depends_on                  = [cloudflare_logpush_ownership_challenge.this]
   enabled                     = var.enabled
   dataset                     = var.dataset
-  destination_conf            = var.destination_conf
+  destination_conf            = local.destination_conf
   filter                      = var.filter != null ? jsonencode(var.filter) : null
   kind                        = var.kind
   max_upload_bytes            = var.max_upload_bytes
@@ -15,6 +14,6 @@ resource "cloudflare_logpush_job" "this" {
   max_upload_records          = var.max_upload_records
   name                        = var.name
   output_options              = var.output_options != null ? var.output_options : null
-  ownership_challenge         = var.ownership_challenge
+  ownership_challenge         = data.aws_s3_object.this.body
   zone_id                     = local.zone_id
 }

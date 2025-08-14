@@ -20,6 +20,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 
 | Name | Version |
 |------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.8 |
 | <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_PROVIDER_END -->
@@ -30,6 +31,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.8 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
@@ -51,9 +53,9 @@ Description: Cloudflare domain to fetch the zone id
 
 Type: `string`
 
-### <a name="input_destination_conf"></a> [destination\_conf](#input\_destination\_conf)
+### <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name)
 
-Description: Uniquely identifies a resource (such as an s3 bucket) where data will be pushed
+Description: The single, unique name of the S3 bucket for logs and for the ownership challenge file.
 
 Type: `string`
 
@@ -74,6 +76,14 @@ Description: The kind of the dataset
 Type: `string`
 
 Default: `"http_requests"`
+
+### <a name="input_s3_path"></a> [s3\_path](#input\_s3\_path)
+
+Description: The path or prefix within the S3 bucket where logs should be stored.
+
+Type: `string`
+
+Default: `""`
 
 ### <a name="input_enabled"></a> [enabled](#input\_enabled)
 
@@ -148,14 +158,6 @@ object({
 ```
 
 Default: `{}`
-
-### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
-
-Description: Challenge to confirm ownership of the destination
-
-Type: `string`
-
-Default: `null`
 
 <!-- TFDOCS_INPUTS_END -->
 

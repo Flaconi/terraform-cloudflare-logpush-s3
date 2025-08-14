@@ -15,9 +15,15 @@ variable "dataset" {
   default     = "http_requests"
 }
 
-variable "destination_conf" {
-  description = "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed"
+variable "s3_bucket_name" {
+  description = "The single, unique name of the S3 bucket for logs and for the ownership challenge file."
   type        = string
+}
+
+variable "s3_path" {
+  description = "The path or prefix within the S3 bucket where logs should be stored."
+  type        = string
+  default     = ""
 }
 
 variable "enabled" {
@@ -80,10 +86,4 @@ variable "output_options" {
     timestamp_format = optional(string, "rfc3339")
   })
   default = {}
-}
-
-variable "ownership_challenge" {
-  description = "Challenge to confirm ownership of the destination"
-  type        = string
-  default     = null
 }
