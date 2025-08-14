@@ -26,6 +26,12 @@ variable "s3_path" {
   default     = ""
 }
 
+variable "s3_region" {
+  description = "The AWS region used for S3 mirror in case if `ownership_challenge` is provided."
+  type        = string
+  default     = "eu-central-1"
+}
+
 variable "enabled" {
   description = "Whether to enable the job"
   type        = bool
@@ -86,4 +92,10 @@ variable "output_options" {
     timestamp_format = optional(string, "rfc3339")
   })
   default = {}
+}
+
+variable "ownership_challenge" {
+  description = "Challenge to confirm ownership of the destination (if provided)"
+  type        = string
+  default     = null
 }

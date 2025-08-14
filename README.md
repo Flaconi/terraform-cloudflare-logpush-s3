@@ -1,14 +1,11 @@
-# terraform-module-template
+# terraform-cloudflare-logpush-s3
+
 Template for Terraform modules
 
-<!-- Uncomment and replace with your module name
-[![lint](https://github.com/flaconi/<MODULENAME>/workflows/lint/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Alint)
-[![test](https://github.com/flaconi/<MODULENAME>/workflows/test/badge.svg)](https://github.com/flaconi/<MODULENAME>/actions?query=workflow%3Atest)
-[![Tag](https://img.shields.io/github/tag/flaconi/<MODULENAME>.svg)](https://github.com/flaconi/<MODULENAME>/releases)
--->
+[![lint](https://github.com/flaconi/terraform-cloudflare-logpush-s3/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/actions?query=workflow%3Alint)
+[![test](https://github.com/flaconi/terraform-cloudflare-logpush-s3/workflows/test/badge.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/actions?query=workflow%3Atest)
+[![Tag](https://img.shields.io/github/tag/flaconi/terraform-cloudflare-logpush-s3.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-For requirements regarding module structure: [style-guide-terraform.md](https://github.com/Flaconi/devops-docs/blob/master/doc/conventions/style-guide-terraform.md)
 
 <!-- TFDOCS_HEADER_START -->
 
@@ -85,6 +82,14 @@ Type: `string`
 
 Default: `""`
 
+### <a name="input_s3_region"></a> [s3\_region](#input\_s3\_region)
+
+Description: The AWS region used for S3 mirror in case if `ownership_challenge` is provided.
+
+Type: `string`
+
+Default: `"eu-central-1"`
+
 ### <a name="input_enabled"></a> [enabled](#input\_enabled)
 
 Description: Whether to enable the job
@@ -159,6 +164,14 @@ object({
 
 Default: `{}`
 
+### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
+
+Description: Challenge to confirm ownership of the destination (if provided)
+
+Type: `string`
+
+Default: `null`
+
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
@@ -166,7 +179,7 @@ Default: `{}`
 
 | Name | Description |
 |------|-------------|
-| <a name="output_logpush_job_id"></a> [logpush\_job\_id](#output\_logpush\_job\_id) | The id of the created logpush job |
+| <a name="output_job_id"></a> [job\_id](#output\_job\_id) | The id of the created logpush job |
 
 <!-- TFDOCS_OUTPUTS_END -->
 

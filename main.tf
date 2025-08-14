@@ -1,4 +1,6 @@
 resource "cloudflare_logpush_ownership_challenge" "this" {
+  count = var.ownership_challenge == null ? 1 : 0
+
   zone_id          = local.zone_id
   destination_conf = local.destination_conf
 }
@@ -14,6 +16,6 @@ resource "cloudflare_logpush_job" "this" {
   max_upload_records          = var.max_upload_records
   name                        = var.name
   output_options              = var.output_options != null ? var.output_options : null
-  ownership_challenge         = data.aws_s3_object.this.body
+  ownership_challenge         = var.ownership_challenge == null ? data.aws_s3_object.this[0].body : var.ownership_challenge
   zone_id                     = local.zone_id
 }
