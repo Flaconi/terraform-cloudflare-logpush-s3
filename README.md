@@ -20,7 +20,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.52.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -30,7 +30,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 4.52.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -45,33 +45,21 @@ Description: The Cloudflare API token.
 
 Type: `string`
 
-### <a name="input_job_name"></a> [job\_name](#input\_job\_name)
-
-Description: The name of the job to create
-
-Type: `string`
-
 ### <a name="input_domain"></a> [domain](#input\_domain)
 
 Description: Cloudflare domain to fetch the zone id
 
 Type: `string`
 
-### <a name="input_logpull_options"></a> [logpull\_options](#input\_logpull\_options)
-
-Description: Configuration string for requested fields and timestamp formats
-
-Type: `string`
-
-### <a name="input_s3_bucket_conf"></a> [s3\_bucket\_conf](#input\_s3\_bucket\_conf)
+### <a name="input_destination_conf"></a> [destination\_conf](#input\_destination\_conf)
 
 Description: Uniquely identifies a resource (such as an s3 bucket) where data will be pushed
 
 Type: `string`
 
-### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
+### <a name="input_name"></a> [name](#input\_name)
 
-Description: Challenge to confirm ownership of the destination
+Description: The name of the job to create
 
 Type: `string`
 
@@ -101,15 +89,7 @@ Description: Filter to include/exclude events
 
 Type: `map(any)`
 
-Default: `{}`
-
-### <a name="input_frequency"></a> [frequency](#input\_frequency)
-
-Description: Frequency of logs being pushed
-
-Type: `string`
-
-Default: `"high"`
+Default: `null`
 
 ### <a name="input_kind"></a> [kind](#input\_kind)
 
@@ -117,7 +97,7 @@ Description: The kind of job to create
 
 Type: `string`
 
-Default: `""`
+Default: `null`
 
 ### <a name="input_max_upload_bytes"></a> [max\_upload\_bytes](#input\_max\_upload\_bytes)
 
@@ -143,6 +123,40 @@ Type: `number`
 
 Default: `1000`
 
+### <a name="input_output_options"></a> [output\_options](#input\_output\_options)
+
+Description: Configuration string for requested fields and timestamp formats
+
+Type:
+
+```hcl
+object({
+    batch_prefix     = optional(string, "")
+    batch_suffix     = optional(string, "")
+    cve_2021_44228   = optional(bool, false)
+    field_delimiter  = optional(string, "")
+    field_names      = optional(list(string))
+    output_type      = optional(string, "ndjson")
+    record_delimiter = optional(string, "")
+    record_prefix    = optional(string, "")
+    record_suffix    = optional(string, "")
+    record_template  = optional(string, "")
+    # Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current sample_interval of the data
+    sample_rate      = optional(number, 1)
+    timestamp_format = optional(string, "rfc3339")
+  })
+```
+
+Default: `{}`
+
+### <a name="input_ownership_challenge"></a> [ownership\_challenge](#input\_ownership\_challenge)
+
+Description: Challenge to confirm ownership of the destination
+
+Type: `string`
+
+Default: `null`
+
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
@@ -158,4 +172,4 @@ Default: `1000`
 
 **[MIT License](LICENSE)**
 
-Copyright (c) 2023 **[Flaconi GmbH](https://github.com/flaconi)**
+Copyright (c) 2025 **[Flaconi GmbH](https://github.com/flaconi)**
