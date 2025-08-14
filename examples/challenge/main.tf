@@ -3,6 +3,10 @@ variable "token" {
   type        = string
 }
 
+provider "cloudflare" {
+  api_token = var.token
+}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -10,8 +14,6 @@ provider "aws" {
 # This will create only job. Ownership challenge is created elsewhere
 module "example" {
   source = "../../"
-
-  api_token = var.token
 
   enabled = true
   name    = "example-job"
