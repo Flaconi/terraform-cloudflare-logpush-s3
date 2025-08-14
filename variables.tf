@@ -15,9 +15,21 @@ variable "dataset" {
   default     = "http_requests"
 }
 
-variable "destination_conf" {
-  description = "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed"
+variable "s3_bucket_name" {
+  description = "The single, unique name of the S3 bucket for logs and for the ownership challenge file."
   type        = string
+}
+
+variable "s3_path" {
+  description = "The path or prefix within the S3 bucket where logs should be stored."
+  type        = string
+  default     = ""
+}
+
+variable "s3_region" {
+  description = "The AWS region used for S3 mirror in case if `ownership_challenge` is provided."
+  type        = string
+  default     = "eu-central-1"
 }
 
 variable "enabled" {
@@ -83,7 +95,7 @@ variable "output_options" {
 }
 
 variable "ownership_challenge" {
-  description = "Challenge to confirm ownership of the destination"
+  description = "Challenge to confirm ownership of the destination (if provided)"
   type        = string
   default     = null
 }
