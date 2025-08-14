@@ -3,11 +3,13 @@ variable "token" {
   type        = string
 }
 
+provider "cloudflare" {
+  api_token = var.token
+}
+
 # This will create only job. Ownership challenge is created elsewhere
 module "example" {
   source = "../../"
-
-  api_token = var.token
 
   enabled = false
   name    = "example-job"
