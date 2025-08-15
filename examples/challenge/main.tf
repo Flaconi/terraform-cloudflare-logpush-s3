@@ -37,6 +37,6 @@ module "example" {
   }
 }
 
-output "id" {
-  value = module.example.job_id
+output "job" {
+  value = module.example.job
 }
