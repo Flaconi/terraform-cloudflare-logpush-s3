@@ -173,7 +173,7 @@ Default: `null`
 
 | Name | Description |
 |------|-------------|
-| <a name="output_job_id"></a> [job\_id](#output\_job\_id) | The id of the created logpush job |
+| <a name="output_job"></a> [job](#output\_job) | A created logpush job |
 
 <!-- TFDOCS_OUTPUTS_END -->
 

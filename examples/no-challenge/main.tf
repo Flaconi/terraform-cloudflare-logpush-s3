@@ -36,6 +36,6 @@ module "example" {
   ownership_challenge = "0000000000000000000000000000"
 }
 
-output "id" {
-  value = module.example.job_id
+output "job" {
+  value = module.example.job
 }
