@@ -23,6 +23,7 @@ module "example" {
   s3_bucket_name = "your-s3-bucket-for-logs"
   s3_path        = "example.com/{DATE}"
   output_options = {
+    cve_2021_44228 = true
     field_names = [
       "RayID",
       "ClientIP",
@@ -34,6 +35,7 @@ module "example" {
       "EdgeStartTimestamp",
       "EdgeEndTimestamp"
     ]
+    sample_rate = 1
   }
 }
 

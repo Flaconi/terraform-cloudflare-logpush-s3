@@ -71,18 +71,18 @@ variable "name" {
 variable "output_options" {
   description = "Configuration string for requested fields and timestamp formats"
   type = object({
-    batch_prefix     = optional(string, "")
-    batch_suffix     = optional(string, "")
+    batch_prefix     = optional(string)
+    batch_suffix     = optional(string)
     cve_2021_44228   = optional(bool, false)
-    field_delimiter  = optional(string, "")
+    field_delimiter  = optional(string)
     field_names      = optional(list(string))
     output_type      = optional(string, "ndjson")
-    record_delimiter = optional(string, "")
-    record_prefix    = optional(string, "")
-    record_suffix    = optional(string, "")
-    record_template  = optional(string, "")
+    record_delimiter = optional(string)
+    record_prefix    = optional(string)
+    record_suffix    = optional(string)
+    record_template  = optional(string)
     # Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current sample_interval of the data
-    sample_rate      = optional(number, 1)
+    sample_rate      = optional(number)
     timestamp_format = optional(string, "rfc3339")
   })
   default = {}
