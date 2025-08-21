@@ -5,6 +5,7 @@ Template for Terraform modules
 [![lint](https://github.com/flaconi/terraform-cloudflare-logpush-s3/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-cloudflare-logpush-s3/workflows/test/badge.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/actions?query=workflow%3Atest)
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-cloudflare-logpush-s3.svg)](https://github.com/flaconi/terraform-cloudflare-logpush-s3/releases)
+[![Terraform](https://img.shields.io/badge/Terraform--registry-cloudflare--logpush--s3-brightgreen.svg)](https://registry.terraform.io/modules/flaconi/logpush-s3/cloudflare/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <!-- TFDOCS_HEADER_START -->
