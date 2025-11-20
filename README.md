@@ -167,6 +167,14 @@ Type: `string`
 
 Default: `null`
 
+### <a name="input_sse"></a> [sse](#input\_sse)
+
+Description: The S3 SSE algorithm used by Cloudflare Logpush.
+
+Type: `string`
+
+Default: `"null"`
+
 <!-- TFDOCS_INPUTS_END -->
 
 <!-- TFDOCS_OUTPUTS_START -->
