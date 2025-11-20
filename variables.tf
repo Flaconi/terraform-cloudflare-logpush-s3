@@ -93,3 +93,9 @@ variable "ownership_challenge" {
   type        = string
   default     = null
 }
+
+variable "sse" {
+  type        = string
+  default     = "AES256"
+  description = "The S3 SSE algorithm used by Cloudflare Logpush."
+}
