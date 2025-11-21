@@ -173,7 +173,7 @@ Description: The S3 SSE algorithm used by Cloudflare Logpush.
 
 Type: `string`
 
-Default: `"null"`
+Default: `null`
 
 <!-- TFDOCS_INPUTS_END -->
 
