@@ -18,8 +18,8 @@ Template for Terraform modules
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.8 |
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.8 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.51 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.21 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -29,8 +29,8 @@ Template for Terraform modules
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.8 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.51 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.21 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 

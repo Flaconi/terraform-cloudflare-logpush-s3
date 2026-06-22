@@ -8,8 +8,8 @@ Terraform should have provider configured with access to S3-bucket to fetch cont
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.8 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.51 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.21 |
 
 ## Providers
 
